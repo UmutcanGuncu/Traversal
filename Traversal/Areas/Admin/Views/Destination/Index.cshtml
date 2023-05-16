@@ -1,0 +1,35 @@
+﻿@using EntityLayer.Entityies;
+@model List<Destination>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h3>Tur Rotaları</h3>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Şehir</th>
+        <th>Fiyat</th>
+        <th>Kapasite</th>
+        <th>Sitede Gör</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.City</td>
+            <td>@item.Price</td>
+            <td>@item.Capacity</td>
+            <td><a href="/Destination/Detail/@item.Id" class="btn btn-outline-info">Sitede Gör</a></td>
+            <td><a href="/Admin/Destination/DeleteDestination/@item.Id" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="EditDestination/@item.Id" class="btn btn-outline-success">Güncelle</a></td>
+            <td><a href="#" class="btn btn-outline-primary">Detaylar</a></td>
+        </tr>
+    }
+</table>
+<a href="AddDestination" class="btn btn-outline-secondary">Rota Ekle</a>
+
+

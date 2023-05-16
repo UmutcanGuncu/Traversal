@@ -1,0 +1,26 @@
+﻿@model List<AnnouncementListDTO>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h1>Duyurular</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Başlık</th>
+        <th>İçerik</th>
+        <th>Duyuruyu Güncelle</th>
+        <th>Duyuruyu Sil</th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <th>@item.Id</th>
+            <td>@item.Title</td>
+            <td>@item.Content</td>
+            <td><a href="/Admin/Announcement/UpdateAnnouncement/@item.Id" class="btn btn-outline-info">Güncelle</a></td>
+            <td><a href="/Admin/Announcement/DeleteAnnouncement/@item.Id" class="btn btn-outline-danger">Duyuruyu Sil</a></td>
+        </tr>
+    }
+</table>
+<a href="/Admin/Announcement/AddAnnouncement" class="btn btn-outline-primary">Duyuru Ekle</a>

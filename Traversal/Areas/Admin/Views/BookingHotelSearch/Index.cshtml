@@ -1,0 +1,25 @@
+﻿@model IEnumerable<BookingSearchOtelViewModel.Result>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+<table class="table table-striped">
+    <tr>
+        <th>#</th>
+        <th>Otel Adı</th>
+        <th>Otel Puanı</th>
+        <th>Otel Değerlendirmesi</th>
+        
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.name</td>
+            <td>@item.reviewScore</td>
+            <td>@item.reviewScoreWord</td>
+        </tr>
+    }
+</table>

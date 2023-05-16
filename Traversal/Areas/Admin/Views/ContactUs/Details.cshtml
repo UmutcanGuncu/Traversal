@@ -1,0 +1,12 @@
+﻿@model List<ContactUs>
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h1>Mesaj Detayı</h1>
+@foreach(var item in Model)
+{
+    <div>
+        @item.Body
+    </div>
+}

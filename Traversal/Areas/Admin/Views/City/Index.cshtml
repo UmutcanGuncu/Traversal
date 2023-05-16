@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<button type="button" id="btnGetList" class="btn btn-outline-success">Şehirleri Listele</button>
+<div id="cityList">
+</div>
+<script>
+    $("#btnGetList").click(function () {
+        $.ajax({
+            contentType: "application/json",
+            dataType: "json",
+            type: "Get",
+            url: "/Admin/City/CityList/",
+            success: function (func) {
+                let w = jQuery.parseJSON(func);
+                console.log(w);
+                let tablehtml = "<table class=table table-bordered> <tr><th> Şehir Id </th>  <th>Şehir Adı</th> <th>Gün Gece</th> <th>Fiyat</th></tr>";
+                $.each(w, (index, value) => {
+                    tablehtml += `<tr><td>${value.Id}</td> <td>${value.City}</td> <td>${value.DayNight}</td>   <td>${value.Price} Tl</td> </tr>`
+                });
+                tablehtml += "</table>";
+                $("#cityList").html(tablehtml);
+            }
+        });
+    });
+</script>

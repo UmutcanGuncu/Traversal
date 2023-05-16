@@ -1,0 +1,29 @@
+﻿@model Traversal.Areas.Admin.Models.AddGuideViewModel
+@{
+    ViewData["Title"] = "AddGuide";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h1>Rehber Ekleme Sayfası</h1>
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label> Ad Soyad</label>
+        <input type="text" class="form-control" asp-for="Name" />
+    </div>
+    <div class="form-group">
+        <label>Görsel</label>
+        <input type="file" class="form-control" asp-for="Image" />
+    </div>
+    <div class="form-group">
+        <label>Rehber Açıklama</label>
+        <input type="text" class="form-control" asp-for="Description"/>
+    </div>
+    <div class="form-group">
+        <label>Instagram Url</label>
+        <input type="text" class="form-control" asp-for="InstagramUrl" />
+    </div>
+    <div class="form-group">
+        <label>Twitter Url</label>
+        <input type="text" class="form-control" asp-for="TwitterUrl" />
+    </div>
+    <button class="btn btn-outline-success">Rehber Ekle</button>
+</form>

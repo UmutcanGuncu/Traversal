@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+
+
+<html lang="en"
+      class="light-style layout-menu-fixed"
+      dir="ltr"
+      data-theme="theme-default"
+      data-assets-path="../assets/"
+      data-template="vertical-menu-template-free">
+<partial name="/Views/Admin/Head.cshtml"></partial>
+
+<body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container">
+            <!-- Menu -->
+            <partial name="/Views/Admin/Menu.cshtml"></partial>
+         
+            <!-- / Menu -->
+            <!-- Layout container -->
+            <div class="layout-page">
+                <!-- Navbar -->
+
+                <partial name="/Views/Admin/Navbar.cshtml"></partial>
+
+                <!-- / Navbar -->
+                <!-- Content wrapper -->
+                <div class="content-wrapper">
+                    <!-- Content -->
+
+                    <div class="container-xxl flex-grow-1 container-p-y">
+                        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span> </h4>
+
+                      @RenderBody()
+                    </div>
+                    <!-- / Content -->
+                    <!-- Footer -->
+                    <partial name="/Views/Admin/Footer.cshtml"></partial>
+                    <!-- / Footer -->
+
+                    <div class="content-backdrop fade"></div>
+                </div>
+                <!-- Content wrapper -->
+            </div>
+            <!-- / Layout page -->
+        </div>
+
+        <!-- Overlay -->
+        <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+    <!-- / Layout wrapper -->
+
+
+    <partial name="/Views/Admin/Script.cshtml"></partial>
+    
+</body>
+</html>
